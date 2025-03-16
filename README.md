@@ -12,4 +12,4 @@ Two options:
 - Install this as an npm package `npm install @dmltdev/react-hooks` and use it as a regular library
 - Install each method separately with `npx install @dmltdev/react-hooks` and use it as a headless library.
 
-The second option may remind you of a @shadcn/ui headless UI library for React.js. You download each component and own it in the codebase. Same design is introduced here: you download the base variant that you can further improve and work on as you wish.
+The second option may remind you of a @shadcn/ui headless UI library for React.js where you download each component and own it in the codebase. Same design is introduced here: you download the base variant that you can further improve and work on as you wish.
