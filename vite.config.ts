@@ -2,6 +2,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import dts from "vite-plugin-dts";
+import tailwindcss from "@tailwindcss/vite";
 
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
@@ -10,10 +11,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ include: ["lib"], insertTypesEntry: true })],
+  plugins: [
+    react(),
+    tailwindcss(),
+    dts({ include: ["lib"], insertTypesEntry: true }),
+  ],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./lib"), // Adjust based on your folder structure
+      "@": resolve(__dirname, "./src"),
+      "~src": resolve(__dirname, "./src"),
+      "~lib": resolve(__dirname, "./lib"),
     },
   },
   build: {
