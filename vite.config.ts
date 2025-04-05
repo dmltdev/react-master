@@ -40,9 +40,13 @@ export default defineConfig({
     },
   },
   test: {
-    reporters: ["verbose"],
+    include: ["**/__tests__/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    exclude: ["**/node_modules/**", "**/dist/**"],
     coverage: {
+      include: ["lib/utils/**/*.{js,ts,jsx,tsx}"],
       provider: "v8",
+      reporter: ["text", "json", "html"],
+      reportsDirectory: "./coverage",
     },
   },
 });
