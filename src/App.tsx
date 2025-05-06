@@ -4,7 +4,7 @@ import { DateTimePicker } from "./components/ui/date-time-picker";
 import { Card } from "./components/ui/card";
 
 import { ErrorBoundary } from "~lib/components";
-import { useChannel, useErrorListen } from "~lib/hooks";
+import { useBroadcastChannel, useErrorListen } from "~lib/hooks";
 
 function FallbackUI() {
   return <h2>Something went wrong. Please refresh.</h2>;
@@ -18,7 +18,7 @@ function App() {
 
   const [value, setValue] = useState(0);
 
-  const { broadcast } = useChannel<number>({
+  const { broadcast } = useBroadcastChannel<number>({
     channelName: "count-channel",
     messageHandler: (message: MessageEvent<number>) => {
       setValue(message.data);

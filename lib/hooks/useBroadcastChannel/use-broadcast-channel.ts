@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useMemo } from "react";
-import { UseChannelProps } from "./use-channel.types";
+import { UseBroadcastChannelProps } from "./use-broadcast-channel.types";
 
-const useChannel = <TInput = any>({
+const useBroadcastChannel = <TInput = any>({
   channelName,
   messageHandler,
-}: UseChannelProps<TInput>) => {
+}: UseBroadcastChannelProps<TInput>) => {
   const channel = useMemo(
     () => new BroadcastChannel(channelName),
     [channelName]
@@ -31,4 +31,4 @@ const useChannel = <TInput = any>({
   return { broadcast };
 };
 
-export { useChannel };
+export { useBroadcastChannel };
