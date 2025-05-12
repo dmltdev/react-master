@@ -4,6 +4,7 @@ import { ErrorBoundary } from "~lib/components";
 import { useErrorListen } from "~lib/hooks";
 
 import { BroadcastChannelExample } from "~lib/hooks/useBroadcastChannel/use-broadcast-channel-example";
+import { EventDelegationExample } from "~lib/hooks/useEventDelegation/use-event-delegation.example";
 
 function FallbackUI() {
   return <h2>Something went wrong. Please refresh.</h2>;
@@ -22,6 +23,7 @@ function App() {
           <DateTimePicker />
           <div className="card">
             <BroadcastChannelExample />
+            <EventDelegationExample />
           </div>
         </Card>
       </main>
