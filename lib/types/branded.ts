@@ -8,6 +8,11 @@ type Brand<B> = { [__brand]: B };
  *
  * The brand acts as an invisible "tag" that TypeScript uses to distinguish between
  * different branded types at compile time.
+ * 
+ * @description
+ * Use Cases:
+ * - Custom validation
+ * - Domain modeling
  *
  *
  * @example
