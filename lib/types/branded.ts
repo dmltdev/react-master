@@ -1,3 +1,6 @@
+declare const __brand: unique symbol;
+type Brand<B> = { [__brand]: B };
+
 /**
  * A branded type utility that creates distinct types from the same underlying type.
  * This prevents accidentally mixing up values that should be treated differently,
@@ -5,10 +8,12 @@
  *
  * The brand acts as an invisible "tag" that TypeScript uses to distinguish between
  * different branded types at compile time.
+ *
+ *
  * @example
- * type UserID = Brand<string, "UserId">
- * type PostID = Brand<string, "PostId">
- * type CommentID = Brand<string, "CommentId">
+ * type UserID = Branded<string, "UserId">
+ * type PostID = Branded<string, "PostId">
+ * type CommentID = Branded<string, "CommentId">
  *
  * type User = {
  *   id: UserID;
@@ -35,8 +40,5 @@
  *
  * const comments = await getCommentsForPost(user.id, post.id) // ❌ This fails since `user.id` is of type UserID and no PostID as expected
  * // ^Argument of type 'UserID' is not assignable to parameter of type 'PostID'.
- * //  Type 'UserID' is not assignable to type '{ __brand: "PostId"; }'.
- * //    Types of property '__brand' are incompatible.
- * //      Type '"UserId"' is not assignable to type '"PostId"'.
  */
-export type Brand<K, T> = K & { __brand: T };
+export type Branded<T, B> = T & Brand<B>;
