@@ -19,6 +19,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "tslint": "tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage"

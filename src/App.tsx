@@ -1,10 +1,8 @@
-import { DateTimePicker } from "./components/ui/date-time-picker";
 import { Card } from "./components/ui/card";
 import { ErrorBoundary } from "~lib/components";
 import { useErrorListen } from "~lib/hooks";
 
-import { BroadcastChannelExample } from "~lib/hooks/useBroadcastChannel/use-broadcast-channel-example";
-import { EventDelegationExample } from "~lib/hooks/useEventDelegation/use-event-delegation.example";
+import { RefMapExample } from "~lib/hooks/useRefMap/use-ref-map.example";
 
 function FallbackUI() {
   return <h2>Something went wrong. Please refresh.</h2>;
@@ -20,10 +18,8 @@ function App() {
     <ErrorBoundary fallback={FallbackUI}>
       <main className="flex w-full min-h-screen items-center justify-center">
         <Card className="w-fit p-4">
-          <DateTimePicker />
           <div className="card">
-            <BroadcastChannelExample />
-            <EventDelegationExample />
+            <RefMapExample />
           </div>
         </Card>
       </main>

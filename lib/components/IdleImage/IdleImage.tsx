@@ -1,4 +1,6 @@
-import { useEffect, type ImgHTMLAttributes } from "react";
+"use client";
+
+import React, { useEffect, type ImgHTMLAttributes } from "react";
 
 interface IdleImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   render?: boolean;
@@ -15,12 +17,12 @@ interface IdleImageProps extends ImgHTMLAttributes<HTMLImageElement> {
  * - Background images - Decorative images that aren't critical
  * - Avatar images - Profile pictures, user avatars
  * - Product images - In e-commerce listings (non-hero images)
- * 
+ *
  * Don't use for:
  * - Hero images - Critical above-the-fold content
  * - Logo/branding - Essential visual elements
  * - Icons - UI elements needed immediately
- * 
+ *
  * @example
  * // Gallery with selective rendering
  * {images.map((img, index) => (
@@ -32,7 +34,7 @@ interface IdleImageProps extends ImgHTMLAttributes<HTMLImageElement> {
  *     className="thumbnail"
  *   />
  * ))}
- * 
+ *
  * @param src - Image source URL
  * @param render - Whether to render the image (default: false)
  * @param alt - Alt text for accessibility (default: "")
