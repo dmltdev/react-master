@@ -5,3 +5,4 @@ export * from "./useErrorListen";
 export * from "./useDisclosure";
 export * from "./useEventDelegation";
 export * from "./useRefMap";
+export * from "./use-key-press";
